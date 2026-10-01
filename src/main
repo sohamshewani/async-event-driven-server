@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+import asyncio
+from src.event_loop import EventLoop
+from src.connection_pool import ConnectionPool
+from src.service_layer import ServiceLayer
+
+async def main():
+    connection_pool = ConnectionPool()
+    event_loop = EventLoop()
+    service_layer = ServiceLayer()
+
+    await connection_pool.initialize()
+    await event_loop.start()
+    await service_layer.start()
+
+if __name__ == '__main__':
+    asyncio.run(main())

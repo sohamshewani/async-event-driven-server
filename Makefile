@@ -1,0 +1,1 @@
+CC=gcc CFLAGS=-Wall -g SRC=src/main.o src/event_loop.o src/connection_pool.o src/service_layer.o OBJS=$(SRC:.o=.c) all: main main: $(OBJS) $(CC) $(OBJS) -o $@ clean: rm -f $(OBJS) main

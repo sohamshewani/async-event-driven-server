@@ -1,0 +1,35 @@
+import unittest
+from src.event_loop import EventLoop
+from src.connection_pool import ConnectionPool
+from src.service_layer import ServiceLayer
+
+
+class TestEventLoop(unittest.TestCase):
+    def setUp(self):
+        self.loop = EventLoop()
+
+    def test_event_loop_start(self):
+        self.loop.start()
+        self.assertTrue(True)
+
+
+class TestConnectionPool(unittest.TestCase):
+    def setUp(self):
+        self.pool = ConnectionPool()
+
+    def test_connection_pool(self):
+        self.pool.add_connection()
+        self.assertTrue(True)
+
+
+class TestServiceLayer(unittest.TestCase):
+    def setUp(self):
+        self.service = ServiceLayer()
+
+    def test_service_layer(self):
+        self.service.process_request()
+        self.assertTrue(True)
+
+
+if __name__ == '__main__':
+    unittest.main()
